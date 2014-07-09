@@ -7,6 +7,12 @@
 </head>
 
 <body>
+	{% with messages = get_flashed_messages() %}
+		{% for message in messages %}
+		<p class="notification">{{ message }}</p>
+		{% endfor %}
+	{% endwith %}
+
 	{% block body %}{% endblock %}
 </body>
 
