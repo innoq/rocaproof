@@ -1,0 +1,6 @@
+{
+  "name": "ROCAproof",
+  "dependencies": {
+    "bootsketch": "~1.0.0"
+  }
+}

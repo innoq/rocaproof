@@ -3,13 +3,13 @@
 {% macro form_field(form, name) %}
 	{% set field = form[name] %}
 	{% set errors = form.errors.get(name, []) %}
-	<label{% if errors %} class="error"{% endif %}>
-		{{ field.label.text }}
-		{{ field }}
+	<div class="form-group {{ "has-error" if errors else "has-success" }}">
+		{{ field.label(class="error") if errors else field.label }}
+		{{ field(class="form-control") }}
 		{% for error in errors %}
-		<p class="error">{{ error }}</p>
+		<p class="control-label has-error">{{ error }}</p>
 		{% endfor %}
-	</label>
+	</div>
 {% endmacro %}
 
 {% block body %}
@@ -22,6 +22,6 @@
 	{{ form_field(form, "username") }}
 	{{ form_field(form, "email") }}
 	{{ form_field(form, "password") }}
-	<input type="submit">
+	<input type="submit" class="btn btn-default">
 </form>
 {% endblock %}
