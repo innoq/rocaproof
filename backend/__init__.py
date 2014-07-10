@@ -14,5 +14,5 @@ def frontpage():
         if form.validate():
             flash("data submitted successfully")
         else:
-            flash("submitted data contains errors")
+            flash("submitted data contains errors", "error")
     return render_template("index.html", title=TITLE, form=form)
