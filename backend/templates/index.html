@@ -5,7 +5,7 @@
 	{% set errors = form.errors.get(name, []) %}
 	<div class="form-group {{ "has-error" if errors else "has-success" }}">
 		{{ field.label(class="error") if errors else field.label }}
-		{{ field(class="form-control") }}
+		{{ field(class="form-control", required=field.flags.required) }}
 		{% for error in errors %}
 		<p class="control-label has-error">{{ error }}</p>
 		{% endfor %}
