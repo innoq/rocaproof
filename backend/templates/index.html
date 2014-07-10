@@ -13,7 +13,7 @@
 {% endmacro %}
 
 {% block body %}
-<form action="{{ url_for("frontpage") }}" method="post">
+<form action="{{ target }}" method="post">
 	{{ form.csrf_token }}
 
 	{{ form_field(form, "username") }}
