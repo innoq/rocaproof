@@ -13,7 +13,7 @@
 {% endmacro %}
 
 {% block body %}
-<form action="{{ target }}" method="post">
+<form action="{{ target }}" method="post" class="pjax">
 	{{ form.csrf_token }}
 
 	{{ form_field(form, "username") }}

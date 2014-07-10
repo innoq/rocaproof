@@ -1,0 +1,10 @@
+{
+  "browser": {
+    "jquery": "./bower_components/jquery/dist/jquery.js",
+    "pjax": "./bower_components/jquery-pjax/jquery.pjax.js"
+  },
+  "devDependencies": {
+    "browserify": "^4.2.0",
+    "watchify": "^0.10.2"
+  }
+}

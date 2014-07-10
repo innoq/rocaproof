@@ -1,6 +1,8 @@
 {
   "name": "ROCAproof",
   "dependencies": {
-    "bootsketch": "~1.0.0"
+    "bootsketch": "~1.0.0",
+    "jquery": "~2.1.1",
+    "jquery-pjax": "~1.9.2"
   }
 }
