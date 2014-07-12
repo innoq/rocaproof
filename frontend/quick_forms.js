@@ -5,13 +5,16 @@ var $ = require("jquery");
 window.jQuery = $; // shim required for pjax
 require("pjax");
 
-// `selector` identifies the respective form(s)
+// `formSelector` identifies the respective form(s)
 // `context` determines the scope of event delegation
-module.exports = function(selector, context) {
+// `containerSelector` optionally identifies the container element to be
+// replaced, defaulting to `formSelector`
+module.exports = function(formSelector, context, containerSelector) {
 	context = context.jquery ? context : $(context);
+	containerSelector = containerSelector || formSelector;
 
-	context.on("submit", selector, function(ev) {
-		$.pjax.submit(ev, selector, { fragment: selector });
+	context.on("submit", formSelector, function(ev) {
+		$.pjax.submit(ev, containerSelector, { fragment: containerSelector });
 	});
 
 	var indicator;

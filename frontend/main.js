@@ -4,7 +4,7 @@
 var $ = require("jquery");
 var qforms = require("./quick_forms");
 
-qforms("form.pjax", document.body);
+qforms("form.pjax", document.body, "#contents");
 
 // XXX: DEBUG
 var timer = 0;
