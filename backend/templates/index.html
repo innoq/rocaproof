@@ -16,6 +16,11 @@
 <form action="{{ target }}" method="post" class="pjax">
 	{{ form.csrf_token }}
 
+	{% for category, message in messages["local"] %}
+	{% set class = "alert-danger" if category == "error" else "alert-success" %}
+	<p class="alert {{ class }}">{{ message }}</p>
+	{% endfor %}
+
 	{{ form_field(form, "username") }}
 	{{ form_field(form, "email") }}
 	{{ form_field(form, "password") }}
